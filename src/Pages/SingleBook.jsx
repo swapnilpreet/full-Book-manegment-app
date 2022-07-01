@@ -38,8 +38,8 @@ const SingleBook = () => {
         <h3>Category : {currentBook?.category}</h3>
         <h3>No of chapters : {currentBook?.No_of_chapters}</h3>
         <button><Link to={`/books/${currentBook.id}/edit`}>Edit</Link></button>
+        <button><Link to={'/'}>Home page</Link></button>
        </div>
-      
 
     </div>
   )

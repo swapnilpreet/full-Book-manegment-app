@@ -18,7 +18,7 @@ const EditBook = () => {
     setForm({ ...form, [name]: value });
   };
   
-  const handleEditPost = (payload) => {
+  const handleeditform = (payload) => {
     axios
       .patch(`/books/${id}`, payload)
       .then((res) => {dispatch(getBooks())
@@ -30,14 +30,8 @@ const EditBook = () => {
   return (
     <div>
       EditBook
-       <br />
-      <input
-        type="text"
-        name="author"
-        placeholder="auth"
-        onChange={handleChangeData}
-      />
       <br />
+      <label>Change Cover Photo : </label>
       <input
         type="text"
         name="cover_photo"
@@ -45,13 +39,24 @@ const EditBook = () => {
         onChange={handleChangeData}
       />
       <br />
+       <label>Change Author Name : </label>
       <input
         type="text"
-        name="book_name"
-        placeholder="Book Name"
+        name="author"
+        placeholder="auth"
         onChange={handleChangeData}
       />
       <br />
+      
+      <label>Change Book Name : </label>
+      <input
+        type="text"
+        name="book_name"
+        placeholder="book_name"
+        onChange={handleChangeData}
+      />
+      <br />
+      <label>Change Category : </label>
       <input
         type="text"
         name="category"
@@ -59,6 +64,7 @@ const EditBook = () => {
         onChange={handleChangeData}
       />
       <br />
+      <label>Change Release Year : </label>
       <input
         type="text"
         name="release_year"
@@ -66,7 +72,11 @@ const EditBook = () => {
         onChange={handleChangeData}
       />
       <br />
-      <button onClick={() => handleEditPost(form)}>Save</button>
+      <br />
+      <div style={{marginLeft:"80px"}}>
+      <button onClick={() => handleeditform(form)}>Save Chnages</button>
+      </div>
+      
     </div>
   );
 };
